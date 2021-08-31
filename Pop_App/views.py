@@ -3,6 +3,12 @@ from .models import *
 from .forms import *
 
 def pop_entry(request):
+    form = PopEntryForm(request.POST)
+    if form.is_valid():
+        form.save()
 
-    form = PopEntryForm()
-    return render(request, 'pop_entry.html', {"form": form})
+    context = {
+        'form': form
+    }
+
+    return render(request, 'pop_entry.html', context)
