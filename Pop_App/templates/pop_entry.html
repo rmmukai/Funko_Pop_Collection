@@ -14,9 +14,29 @@
     </head>
 
     <body>
-        <form method="post">
-            {% csrf_token %} {{ form.as_p }}
-            <button type="submit">Submit Entry</button>
-        </form>
+        <div class="wrapper">
+            <div class="page_header">
+                <img
+                    src="{% static 'Pictures\pop_logo.png' %}"
+                    alt="Image Not Available"
+                    class="pop_logo_pic"
+                />
+
+                <h1>Welcome! Take a look at my collection of Funko Pops!</h1>
+
+                <p class="price_checker">
+                    Want to check a value of a Funko Pop?
+                    <a
+                        href="https://www.hobbydb.com/marketplaces/poppriceguide/collectibles/for_sale_search?q="
+                        >Click Here!</a
+                    >
+                </p>
+            </div>
+
+            <form method="post" class="pop_entry_form">
+                {% csrf_token %} {{ form.as_p }}
+                <button type="submit">Submit Entry</button>
+            </form>
+        </div>
     </body>
 </html>
