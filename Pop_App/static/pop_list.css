@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 1000px;
+    height: auto;
+}
+
+.page_header {
+    background-color: rgb(17, 147, 205);
+}
+
+.page_header img {
+    width: 160px;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.page_header h1 {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 25px;
+}

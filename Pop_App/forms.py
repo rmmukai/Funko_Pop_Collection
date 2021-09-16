@@ -9,7 +9,9 @@ class PopEntryForm(forms.ModelForm):
             'character',
             'series',
             'series_number',
-            'special_edition'
+            'special_edition',
+            'condition',
+            'image',
         )
 
         widgets = {

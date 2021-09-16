@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Funko Pop Entry!</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'pop_entry.css' %}"
+        />
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="page_header">
+                <img
+                    src="{% static 'Pictures\pop_logo.png' %}"
+                    alt="Image Not Available"
+                    class="pop_logo_pic"
+                />
+
+                <h1>Welcome! Take a look at my collection of Funko Pops!</h1>
+
+                <p class="price_checker">
+                    Want to check a value of a Funko Pop?
+                    <a
+                        href="https://www.hobbydb.com/marketplaces/poppriceguide/collectibles/for_sale_search?q="
+                        >Click Here!</a
+                    >
+                </p>
+            </div>
+
+            <div class="funko_pop_collection">
+                <h2 class="add_pop_link">
+                    Click <a href="/pop_entry">HERE</a> to add a new Funko Pop
+                    to your collection!
+                </h2>
+
+                <table class="pop_list">
+                    <thead class="column_names">
+                        <tr>
+                            <th>Funko Pop Character</th>
+                            <th>Series of Funko Pop</th>
+                            <th>Character Series Number</th>
+                            <th>Special Edition</th>
+                            <th>Condition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pops in funko_pops %}
+                        <tr>
+                            <td>{{ pops.character }}</td>
+                            <td>{{ pops.series}}</td>
+                            <td>{{ pops.series_number }}</td>
+                            <td>{{ pops.special_edition }}</td>
+                            <td>{{ pops.condition }}</td>
+                            <td>
+                                <a
+                                    href="/products/{{ products.id }}/edit_prepreg"
+                                    >Edit</a
+                                >
+                            </td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

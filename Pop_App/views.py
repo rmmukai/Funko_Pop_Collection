@@ -12,3 +12,11 @@ def pop_entry(request):
     }
 
     return render(request, 'pop_entry.html', context)
+
+
+def pop_list(request):
+    context = {
+        'funko_pops': Pop_Entry.objects.all(),
+    }
+    return render(request, 'pop_list.html', context)
+
